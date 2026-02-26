@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobtesten</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="section">
+      <p class="eyebrow">Jobtesten</p>
+      <h1>Er dit job i risiko?</h1>
+      <p class="lead">Besvar spørgsmålene og få en simpel vurdering af risikoen.</p>
+      <a class="btn ghost" href="index.html">Tilbage til forsiden</a>
+    </header>
+
+    <main class="content">
+      <section class="section quiz" id="arbejds-testen">
+        <form class="quiz-form" id="risk-quiz">
+          <div class="quiz-item">
+            <p>Er jobbet rutinebaseret?</p>
+            <label><input type="radio" name="routine" value="ja" required /> Ja</label>
+            <label><input type="radio" name="routine" value="nej" /> Nej</label>
+          </div>
+          <div class="quiz-item">
+            <p>Kræver jobbet kreativitet?</p>
+            <label><input type="radio" name="creativity" value="ja" required /> Ja</label>
+            <label><input type="radio" name="creativity" value="nej" /> Nej</label>
+          </div>
+          <div class="quiz-item">
+            <p>Kræver jobbet menneskelig kontakt?</p>
+            <label><input type="radio" name="contact" value="ja" required /> Ja</label>
+            <label><input type="radio" name="contact" value="nej" /> Nej</label>
+          </div>
+          <div class="quiz-item">
+            <p>Kræver jobbet fysisk arbejde?</p>
+            <label><input type="radio" name="physical" value="ja" required /> Ja</label>
+            <label><input type="radio" name="physical" value="nej" /> Nej</label>
+          </div>
+          <button class="quiz-submit" type="submit">Se resultat</button>
+          <div class="quiz-result" id="risk-result" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const quizForm = document.querySelector("#risk-quiz");
+    const resultEl = document.querySelector("#risk-result");
+
+    if (quizForm && resultEl) {
+      quizForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const routine = quizForm.elements["routine"].value === "ja";
+        const creativity = quizForm.elements["creativity"].value === "ja";
+        const contact = quizForm.elements["contact"].value === "ja";
+        const physical = quizForm.elements["physical"].value === "ja";
+
+        let score = 0;
+        if (routine) score += 2;
+        if (creativity) score -= 1;
+        if (contact) score -= 1;
+        if (physical) score -= 1;
+
+        let label = "Mellem risiko";
+        let message = "Dit job har en mellem risiko for at blive påvirket af AI";
+        let levelClass = "result-medium";
+
+        if (score >= 2) {
+          label = "Høj risiko";
+          message = "Dit job har en høj risiko for at blive erstattet af AI i løbet af de næste år";
+          levelClass = "result-high";
+        } else if (score === 1) {
+          label = "Mellem risiko";
+          message = "Dit job har en mellem risiko for at blive påvirket af AI";
+          levelClass = "result-medium";
+        } else {
+          label = "Lav risiko";
+          message = "Dit job har en lav risiko for at blive erstattet af AI i de næste år";
+          levelClass = "result-low";
+        }
+
+        resultEl.textContent = `${label}: ${message}`;
+        resultEl.classList.remove("result-low", "result-medium", "result-high");
+        resultEl.classList.add(levelClass);
+      });
+    }
+  </script>
+</body>
+</html>
+

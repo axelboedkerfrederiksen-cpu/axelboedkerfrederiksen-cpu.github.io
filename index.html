@@ -3,281 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kunstig Intelligens og Fremtidens Arbejdsmarked</title>
+  <title>AI og Fremtidens Arbejdsmarked</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="page">
     <header class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow">Axel, Benjamin og Christians produkt</p>
-        <h1>Kunstig intelligens og fremtidens arbejdsmarked</h1>
+      <div class="container hero-inner">
+        <p class="eyebrow">Skoleprojekt · AI og fremtidens arbejdsmarked</p>
+        <h1>Velkommen til vores hjemmeside</h1>
         <p class="lead">
-          <strong>Problemstilling</strong>:
-          På hvilke måder påvirker AI fremtidens arbejdsmarked, og bør man være bekymret for arbejdsløshed
-          eller fokusere på de nye job der opstår, og hvordan kan man håndtere det som enkelte, og udnytte
-          de nye muligheder?
+          Vi undersøger hvordan kunstig intelligens påvirker job, kompetencer og muligheder og hvordan man
+          kan forberede sig på en fremtid, hvor teknologi og mennesker arbejder tættere sammen.
         </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="quiz.html">Tag job-testen</a>
+          <a class="btn ghost" href="interviews.html">Se videoer om AI</a>
+        </div>
       </div>
     </header>
 
-    <main class="content">
-      <section class="section interviews">
-        <div class="section-head row">
-          <div>
-            <h2>Interviews og video</h2>
-            <p>Her samler vi korte interviews med eksperter, og tilfældige.</p>
+    <main>
+      <section class="section features" aria-labelledby="features-title">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="features-title">Udforsk projektet</h2>
+            <p>Tre nøglespor der gør temaet konkret og relevant.</p>
           </div>
-        </div>
-        <div class="videos">
-          <div class="video-slot">
-            <video controls poster="video-placeholder1.png">
-              <source src="video1.mp4" type="video/mp4" />
-              Din browser understøtter ikke video-tagget.
-            </video>
-            <p>Interview 1: [Indsæt beskrivelse]</p>
-          </div>
-          <div class="video-slot">
-            <video controls poster="video-placeholder2.png">
-              <source src="video2.mp4" type="video/mp4" />
-              Din browser understøtter ikke video-tagget.
-            </video>
-            <p>Interview 2: [Indsæt beskrivelse]</p>
-          </div>
-          <div class="video-slot">
-            <video controls poster="video-placeholder3.png">
-              <source src="video3.mp4" type="video/mp4" />
-              Din browser understøtter ikke video-tagget.
-            </video>
-            <p>Interview 3: [Indsæt beskrivelse]</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section questions">
-        <h2>Det undersøger vi</h2>
-        <ul class="checklist questions-list">
-          <li class="question-item">
-            <div class="question-text">
-              Hvad er kunstig intelligens, og hvordan bruges det allerede I arbejdsmarkedet?
-            </div>
-            <button class="read-more" type="button" aria-expanded="false">Læs mere</button>
-          </li>
-          <li class="question-item">
-            <div class="question-text">
-              Hvordan påvirker AI fremtidens arbejdsmarked, og bør vi frygte arbejdsløshed – eller fokusere på de nye muligheder og kompetencer, der opstår?
-            </div>
-            <button class="read-more" type="button" aria-expanded="false">Læs mere</button>
-          </li>
-          <li class="question-item">
-            <div class="question-text">
-              Hvilke nye job og karrieremuligheder opstår som følge af AI, og hvilke brancher og enkelte personer bliver ramt værst af Ai?
-            </div>
-            <button class="read-more" type="button" aria-expanded="false">Læs mere</button>
-          </li>
-          <li class="question-item">
-            <div class="question-text">
-              Skal man være bekymret for, at kunstig intelligens overtager uddannelser eller jobs, og hvordan kan virksomheder bruge AI ansvarligt, så medarbejdere beskyttes og omstilles i stedet for at blive erstattet?
-            </div>
-            <button class="read-more" type="button" aria-expanded="false">Læs mere</button>
-          </li>
-        </ul>
-      </section>
-
-      <section class="section ai">
-        <div class="section-head">
-          <h2>Hvad er AI?</h2>
-          <p>Her er en model der viser hvad AI er.</p>
-        </div>
-        <figure class="ai-figure">
-          <img src="ai-simple-tree.png" alt="AI – det simple træ" />
-          <figcaption>AI genereret model af Gemini.</figcaption>
-        </figure>
-      </section>
-
-      <section class="section examples">
-        <div class="section-head">
-          <h2>Sådan bruges AI allerede i dag</h2>
-          <p>Det gør det konkret. Ellers bliver AI hurtigt for abstrakt.</p>
-        </div>
-        <div class="grid two">
-          <a class="panel link-panel" href="https://mohasoftware.com/blog/ai-in-accounting-real-worldexamples-and-case-studies?" target="_blank" rel="noopener">
-            <h3>Regnskab</h3>
-            <p>AI automatiserer bogføring.</p>
-          </a>
-          <a class="panel link-panel" href="https://health.ec.europa.eu/ehealth-digital-health-and-care/artificial-intelligence-healthcare_en" target="_blank" rel="noopener">
-            <h3>Hospitaler</h3>
-            <p>AI hjælper med diagnoser.</p>
-          </a>
-          <a class="panel link-panel" href="https://www.danskindustri.dk/vi-radgiver-dig/ecommerce/New-commerce-DI/AI-i-e-commerce/" target="_blank" rel="noopener">
-            <h3>Webshops</h3>
-            <p>AI anbefaler produkter.</p>
-          </a>
-          <a class="panel link-panel" href="https://cases.media/en/article/how-ai-in-aviation-can-transform-this-industry?srsltid=AfmBOop4Eo__qF5D7GtrueLdACCb1Wk3X-wNpQzPbB0fUmrFaSr1afHD" target="_blank" rel="noopener">
-            <h3>Fly</h3>
-            <p>AI optimerer ruter.</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="section quiz" id="arbejds-testen">
-        <div class="section-head">
-          <h2>Er dit job i risiko?</h2>
-          <p>Besvar spørgsmålene og få en simpel vurdering af risikoen.</p>
-        </div>
-        <form class="quiz-form" id="risk-quiz">
-          <div class="quiz-item">
-            <p>Er jobbet rutinebaseret?</p>
-            <label><input type="radio" name="routine" value="ja" required /> Ja</label>
-            <label><input type="radio" name="routine" value="nej" /> Nej</label>
-          </div>
-          <div class="quiz-item">
-            <p>Kræver jobbet kreativitet?</p>
-            <label><input type="radio" name="creativity" value="ja" required /> Ja</label>
-            <label><input type="radio" name="creativity" value="nej" /> Nej</label>
-          </div>
-          <div class="quiz-item">
-            <p>Kræver jobbet menneskelig kontakt?</p>
-            <label><input type="radio" name="contact" value="ja" required /> Ja</label>
-            <label><input type="radio" name="contact" value="nej" /> Nej</label>
-          </div>
-          <div class="quiz-item">
-            <p>Kræver jobbet fysisk arbejde?</p>
-            <label><input type="radio" name="physical" value="ja" required /> Ja</label>
-            <label><input type="radio" name="physical" value="nej" /> Nej</label>
-          </div>
-          <button class="quiz-submit" type="submit">Se resultat</button>
-          <div class="quiz-result" id="risk-result" aria-live="polite"></div>
-        </form>
-      </section>
-
-      <section class="section themes">
-        <h2>Nøgletemaer</h2>
-        <div class="grid three">
-          <div class="panel">
-            <h3>Automatisering</h3>
-            <p>Hvilke opgaver kan AI løse, og hvor bliver mennesker stadig uundværlige?</p>
-          </div>
-          <div class="panel">
-            <h3>Kompetencer</h3>
-            <p>Hvilke færdigheder bliver vigtigere, og hvordan lærer vi dem?</p>
-          </div>
-          <div class="panel">
-            <h3>Ansvarlig brug</h3>
-            <p>Etik, transparens og hvordan vi beskytter medarbejdere i forandring.</p>
+          <div class="features-grid">
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 7h10v10H7z" />
+                  <path d="M7 12h10" />
+                  <path d="M12 7v10" />
+                </svg>
+              </div>
+              <h3>Martin Thoborg Interview</h3>
+              <p>Hvordan påvirker AI fremtidens arbejdsmarked? Martin Thorborg deler sit syn.</p>
+              <a class="card-link" href="martin-thoborg.html">Se interviewet</a>
+            </article>
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 7h10v10H7z" />
+                  <path d="M7 12h10" />
+                  <path d="M12 7v10" />
+                </svg>
+              </div>
+              <h3>Interviews</h3>
+              <p>Korte interviews med eksperter og perspektiver fra hverdagen.</p>
+              <a class="card-link" href="interviews.html">Se interviews</a>
+            </article>
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14" />
+                  <path d="M12 5v14" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+              </div>
+              <h3>Job-test</h3>
+              <p>En kort test der giver et hurtigt indblik i risikoniveau.</p>
+              <a class="card-link" href="quiz.html">Tag testen</a>
+            </article>
           </div>
         </div>
       </section>
-
-
     </main>
 
     <footer class="footer">
+      <div class="container footer-inner">
+        <p>Axel, Benjamin og Christian · Projektuge om AI og fremtidens arbejdsmarked</p>
+      </div>
     </footer>
   </div>
-
-  <div class="scroll-popup" id="scroll-popup">
-    <a class="scroll-popup-link" href="#arbejds-testen">Prøv arbejds testen</a>
-    <button class="scroll-popup-close" type="button" aria-label="Luk">×</button>
-  </div>
-
-  <script>
-    const questionItems = document.querySelectorAll(".question-item");
-    const clampLines = 3;
-
-    questionItems.forEach((item) => {
-      const text = item.querySelector(".question-text");
-      const button = item.querySelector(".read-more");
-
-      text.style.setProperty("--clamp-lines", clampLines);
-
-      const needsClamp = text.scrollHeight > text.clientHeight + 2;
-      if (!needsClamp) {
-        button.style.display = "none";
-        return;
-      }
-
-      button.addEventListener("click", () => {
-        const expanded = item.classList.toggle("expanded");
-        button.textContent = expanded ? "Skjul" : "Læs mere";
-        button.setAttribute("aria-expanded", expanded ? "true" : "false");
-      });
-    });
-
-    const quizForm = document.querySelector("#risk-quiz");
-    const resultEl = document.querySelector("#risk-result");
-
-    if (quizForm && resultEl) {
-      quizForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        const routine = quizForm.elements["routine"].value === "ja";
-        const creativity = quizForm.elements["creativity"].value === "ja";
-        const contact = quizForm.elements["contact"].value === "ja";
-        const physical = quizForm.elements["physical"].value === "ja";
-
-        let score = 0;
-        if (routine) score += 2;
-        if (creativity) score -= 1;
-        if (contact) score -= 1;
-        if (physical) score -= 1;
-
-        let label = "Mellem risiko";
-        let message = "Dit job har en mellem risiko for at blive påvirket af AI";
-        let levelClass = "result-medium";
-
-        if (score >= 2) {
-          label = "Høj risiko";
-          message = "Dit job har en høj risiko for at blive erstattet af AI i løbet af de næste år";
-          levelClass = "result-high";
-        } else if (score === 1) {
-          label = "Mellem risiko";
-          message = "Dit job har en mellem risiko for at blive påvirket af AI";
-          levelClass = "result-medium";
-        } else {
-          label = "Lav risiko";
-          message = "Dit job har en lav risiko for at blive erstattet af AI i de næste år";
-          levelClass = "result-low";
-        }
-
-        resultEl.textContent = `${label}: ${message}`;
-        resultEl.classList.remove("result-low", "result-medium", "result-high");
-        resultEl.classList.add(levelClass);
-      });
-    }
-
-    const popup = document.querySelector("#scroll-popup");
-    const popupClose = document.querySelector(".scroll-popup-close");
-    let popupShown = false;
-
-    const showPopup = () => {
-      if (popupShown) return;
-      popupShown = true;
-      popup.classList.add("visible");
-    };
-
-    const onScroll = () => {
-      if (window.scrollY > 220) {
-        showPopup();
-        window.removeEventListener("scroll", onScroll);
-      }
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    popupClose.addEventListener("click", () => {
-      popup.classList.remove("visible");
-    });
-
-    const popupLink = document.querySelector(".scroll-popup-link");
-    if (popupLink) {
-      popupLink.addEventListener("click", () => {
-        popup.classList.remove("visible");
-      });
-    }
-  </script>
 </body>
 </html>
+
