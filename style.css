@@ -8,6 +8,19 @@ img {
   margin-bottom: 15px;
 }
 :root {
+  /* Risk level result colors */
+  .result-low {
+    color: #2e7d32; /* grøn */
+    font-weight: bold;
+  }
+  .result-medium {
+    color: #ff9800; /* orange */
+    font-weight: bold;
+  }
+  .result-high {
+    color: #d32f2f; /* rød */
+    font-weight: bold;
+  }
   --bg-start: #f3efe9;
   --bg-end: #e6ebf1;
   --ink: #111318;
