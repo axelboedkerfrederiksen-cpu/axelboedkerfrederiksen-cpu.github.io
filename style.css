@@ -1,4 +1,13 @@
-﻿:root {
+﻿/* Reduce space under headings and images for tighter layout on interview page */
+h1 {
+  margin-bottom: 15px;
+}
+
+img {
+  display: block;
+  margin-bottom: 15px;
+}
+:root {
   --bg-start: #f3efe9;
   --bg-end: #e6ebf1;
   --ink: #111318;
@@ -88,7 +97,7 @@ p {
 .hero {
   background: #ffffff;
   border-radius: 20px;
-  padding: var(--space-2) var(--space-2);
+  padding: 20px 20px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
 }
@@ -119,8 +128,12 @@ p {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-top: 0.2rem;
+  gap: 0.3rem;
+  /* Reduce space below image caption */
+  p[style*="color: #444;"] {
+    margin-bottom: 0.3em;
+  }
+  margin-top: 0;
 }
 
 .btn {
