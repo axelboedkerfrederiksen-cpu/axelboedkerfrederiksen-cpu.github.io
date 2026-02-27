@@ -22,24 +22,34 @@
       <section class="section quiz" id="arbejds-testen">
         <form class="quiz-form" id="risk-quiz">
           <div class="quiz-item">
-            <p>Er jobbet rutinebaseret?</p>
-            <label><input type="radio" name="routine" value="ja" required /> Ja</label>
-            <label><input type="radio" name="routine" value="nej" /> Nej</label>
+            <p>Er jobbet primært rutinebaseret?</p>
+            <label><input type="radio" name="q1" value="ja" required /> Ja</label>
+            <label><input type="radio" name="q1" value="nej" /> Nej</label>
           </div>
           <div class="quiz-item">
-            <p>Kræver jobbet kreativitet?</p>
-            <label><input type="radio" name="creativity" value="ja" required /> Ja</label>
-            <label><input type="radio" name="creativity" value="nej" /> Nej</label>
+            <p>Kan opgaverne nemt beskrives i klare regler?</p>
+            <label><input type="radio" name="q2" value="ja" required /> Ja</label>
+            <label><input type="radio" name="q2" value="nej" /> Nej</label>
           </div>
           <div class="quiz-item">
-            <p>Kræver jobbet menneskelig kontakt?</p>
-            <label><input type="radio" name="contact" value="ja" required /> Ja</label>
-            <label><input type="radio" name="contact" value="nej" /> Nej</label>
+            <p>Kræver jobbet høj kreativitet?</p>
+            <label><input type="radio" name="q3" value="ja" required /> Ja</label>
+            <label><input type="radio" name="q3" value="nej" /> Nej</label>
           </div>
           <div class="quiz-item">
-            <p>Kræver jobbet fysisk arbejde?</p>
-            <label><input type="radio" name="physical" value="ja" required /> Ja</label>
-            <label><input type="radio" name="physical" value="nej" /> Nej</label>
+            <p>Kræver jobbet kompleks menneskelig relation?</p>
+            <label><input type="radio" name="q4" value="ja" required /> Ja</label>
+            <label><input type="radio" name="q4" value="nej" /> Nej</label>
+          </div>
+          <div class="quiz-item">
+            <p>Kræver jobbet fysisk tilstedeværelse?</p>
+            <label><input type="radio" name="q5" value="ja" required /> Ja</label>
+            <label><input type="radio" name="q5" value="nej" /> Nej</label>
+          </div>
+          <div class="quiz-item">
+            <p>Bruger jobbet allerede meget teknologi?</p>
+            <label><input type="radio" name="q6" value="ja" required /> Ja</label>
+            <label><input type="radio" name="q6" value="nej" /> Nej</label>
           </div>
           <button class="quiz-submit" type="submit">Se resultat</button>
           <div class="quiz-result" id="risk-result" aria-live="polite"></div>
@@ -56,32 +66,35 @@
       quizForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        const routine = quizForm.elements["routine"].value === "ja";
-        const creativity = quizForm.elements["creativity"].value === "ja";
-        const contact = quizForm.elements["contact"].value === "ja";
-        const physical = quizForm.elements["physical"].value === "ja";
+        // Spørgsmål
+        const q1 = quizForm.elements["q1"].value === "ja";
+        const q2 = quizForm.elements["q2"].value === "ja";
+        const q3 = quizForm.elements["q3"].value === "ja";
+        const q4 = quizForm.elements["q4"].value === "ja";
+        const q5 = quizForm.elements["q5"].value === "ja";
+        const q6 = quizForm.elements["q6"].value === "ja";
 
+        // Point-system
         let score = 0;
-        if (routine) score += 2;
-        if (creativity) score -= 1;
-        if (contact) score -= 1;
-        if (physical) score -= 1;
+        if (q1) score += 2; // Rutinebaseret
+        if (q2) score += 2; // Klare regler
+        if (!q3) score += 2; // Ikke kreativt
+        if (!q4) score += 2; // Ikke menneskelig relation
+        if (q5) score -= 2; // Fysisk tilstedeværelse giver minus 2
+        if (q6) score += 1; // Meget teknologi
 
+        // Risiko-regler
         let label = "Mellem risiko";
-        let message = "Dit job har en mellem risiko for at blive påvirket af AI";
+        let message = "Nogle dele kan automatiseres. Man skal opkvalificere sig.";
         let levelClass = "result-medium";
 
-        if (score >= 2) {
+        if (score >= 7) {
           label = "Høj risiko";
-          message = "Dit job har en høj risiko for at blive erstattet af AI i løbet af de næste år";
+          message = "Jobbet er regelbaseret, digitalt og rutinepræget. Stor sandsynlighed for automatisering.";
           levelClass = "result-high";
-        } else if (score === 1) {
-          label = "Mellem risiko";
-          message = "Dit job har en mellem risiko for at blive påvirket af AI";
-          levelClass = "result-medium";
-        } else {
+        } else if (score <= 3) {
           label = "Lav risiko";
-          message = "Dit job har en lav risiko for at blive erstattet af AI i de næste år";
+          message = "Jobbet kræver menneskelighed, kreativitet eller fysisk arbejde. AI vil støtte – ikke erstatte.";
           levelClass = "result-low";
         }
 
